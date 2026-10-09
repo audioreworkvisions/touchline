@@ -16,10 +16,10 @@ Open `http://localhost:8765`. If that port is in use, set `PORT` to another free
 Copy `.env.example` to `.env` locally. Fill the resource endpoint, **deployment name** and key from your Azure resource. Generate a random API access token with at least 24 characters. Do not paste secrets into chat or commit them.
 
 ```sh
-node --env-file=.env server.mjs
+node server.mjs
 ```
 
-The endpoint is the Azure resource origin, for example `https://YOUR-RESOURCE.openai.azure.com`. The adapter adds `/openai/v1/chat/completions`. Use a deployment that supports Chat Completions, JSON mode and `max_completion_tokens`.
+The endpoint is the Azure resource origin, for example `https://YOUR-RESOURCE.openai.azure.com` or an Azure AI Services endpoint. The adapter loads `.env` automatically. If `AZURE_OPENAI_API_VERSION` is set, it uses the deployment route with that API version; otherwise it uses the Azure OpenAI v1 route. Use a deployment that supports Chat Completions, JSON mode and `max_completion_tokens`.
 
 The frontend indicator will report configuration, not successful inference. Select the demo moment and click “Azure-KI formulieren”. Enter the application's **access token**, not the Azure key. Success must display “Azure OpenAI · redaktioneller Entwurf”. An unavailable or rejected response displays the rule fallback. Verify all three story languages with real calls before claiming cloud inference works.
 

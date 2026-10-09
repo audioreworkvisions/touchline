@@ -1,17 +1,30 @@
 import http from'node:http';
 import{readFile}from'node:fs/promises';
+import{readFileSync}from'node:fs';
 import{fileURLToPath}from'node:url';
 import path from'node:path';
 import{timingSafeEqual}from'node:crypto';
 import{generateMatch,Engine,validateEvent}from'./dist/engine.mjs';
 import{createNarrative}from'./narrator.mjs';
 const ROOT=path.join(path.dirname(fileURLToPath(import.meta.url)),'dist');
+function loadDotEnv(file=path.join(path.dirname(fileURLToPath(import.meta.url)),'.env')){
+ try{
+  const contents=readFileSync(file,'utf8');
+  for(const line of contents.split(/\r?\n/)){
+   const match=line.match(/^\s*(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*$/);
+   if(!match||match[1] in process.env)continue;
+   let value=match[2];if((value.startsWith('"')&&value.endsWith('"'))||(value.startsWith("'")&&value.endsWith("'")))value=value.slice(1,-1);
+   process.env[match[1]]=value;
+  }
+ }catch(error){if(error.code!=='ENOENT')throw error;}
+}
+loadDotEnv();
 const MIME={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.json':'application/json'};
 const parsedNumber=(s,min,max,def)=>{if(s===null||s===undefined)return def;const n=Number(s);if(!Number.isFinite(n)||n<min||n>max)throw Error('Invalid numeric parameter');return n;};
 async function body(req){let size=0,chunks=[];for await(const chunk of req){size+=chunk.length;if(size>128000)throw Error('Request exceeds 128 KB');chunks.push(chunk);}return JSON.parse(Buffer.concat(chunks).toString('utf8'));}
 function authenticated(req,token){if(!token||token.length<24)return false;const given=Buffer.from(req.headers.authorization||''),expected=Buffer.from(`Bearer ${token}`);return given.length===expected.length&&timingSafeEqual(given,expected);}
 export function createServer(config={}){
- const env={endpoint:process.env.AZURE_OPENAI_ENDPOINT,key:process.env.AZURE_OPENAI_API_KEY,deployment:process.env.AZURE_OPENAI_DEPLOYMENT,...config.ai};const token=config.token??process.env.TOUCHLINE_API_TOKEN;const imported=new Engine();let aiInFlight=0,aiRequests=[],streams=0;const cache=new Map(),matches=new Map();
+ const env={endpoint:process.env.AZURE_OPENAI_ENDPOINT,key:process.env.AZURE_OPENAI_API_KEY,deployment:process.env.AZURE_OPENAI_DEPLOYMENT,apiVersion:process.env.AZURE_OPENAI_API_VERSION,...config.ai};const token=config.token??process.env.TOUCHLINE_API_TOKEN;const imported=new Engine();let aiInFlight=0,aiRequests=[],streams=0;const cache=new Map(),matches=new Map();
  const getMatch=seed=>{if(!matches.has(seed)){if(matches.size>=8)matches.delete(matches.keys().next().value);matches.set(seed,generateMatch(seed));}return matches.get(seed);};
  const server=http.createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','no-referrer');res.setHeader('Content-Security-Policy',"default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; script-src 'self'; frame-ancestors 'self'");
