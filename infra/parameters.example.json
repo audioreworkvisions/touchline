@@ -1,0 +1,12 @@
+{
+ "$schema":"https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+ "contentVersion":"1.0.0.0",
+ "parameters":{
+   "image":{"value":"ghcr.io/YOUR-ACCOUNT/touchline:1.0.0"},
+   "azureOpenAiEndpoint":{"value":"https://YOUR-RESOURCE.openai.azure.com"},
+   "azureOpenAiDeployment":{"value":"YOUR-DEPLOYMENT"},
+   "azureOpenAiKey":{"reference":{"keyVault":{"id":"/subscriptions/YOUR-SUBSCRIPTION/resourceGroups/YOUR-RG/providers/Microsoft.KeyVault/vaults/YOUR-VAULT"},"secretName":"azure-openai-key"}},
+   "apiToken":{"reference":{"keyVault":{"id":"/subscriptions/YOUR-SUBSCRIPTION/resourceGroups/YOUR-RG/providers/Microsoft.KeyVault/vaults/YOUR-VAULT"},"secretName":"touchline-api-token"}},
+   "allowedCidrs":{"value":["YOUR-PUBLIC-IP/32"]}
+ }
+}

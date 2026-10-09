@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-09T10:06:45.416Z",
+  "runtime": "v22.22.2",
+  "platform": "win32",
+  "seeds": 10,
+  "events": 7235,
+  "stories": 598,
+  "scope": "Local synchronous event validation + ingestion + deterministic narration only. No network, browser rendering or Azure LLM latency.",
+  "p50_ms": 0.08999999999991815,
+  "p95_ms": 0.21810000000004948,
+  "max_ms": 5.1556000000000495,
+  "target_note": "An engineering measurement, not a production SLA or Azure benchmark."
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "id": "overlay-ins-s42-0505",
+  "insight_id": "ins-s42-0505",
+  "synthetic": true,
+  "clock": "match-relative-ms",
+  "start_ms": 3748000,
+  "end_ms": 3760000,
+  "priority": 100,
+  "locale": "en",
+  "headline": "From turnover to opportunity",
+  "body": "Harbour FC shoots 10 seconds after an opposition turnover. The short transition suggests an opportunity before the defence could reset. Kai Santos scores.",
+  "evidence_ids": [
+    "s42-0500",
+    "s42-0501",
+    "s42-0502",
+    "s42-0503",
+    "s42-0504",
+    "s42-0505"
+  ],
+  "requires_editor_approval": true
+}

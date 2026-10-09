@@ -1,0 +1,93 @@
+{
+  "synthetic": true,
+  "as_of": "89:49",
+  "complete": false,
+  "score": "1 : 1",
+  "title": "The story so far",
+  "moments": [
+    {
+      "time": "01:09",
+      "title": "An opening appears",
+      "text": "Rayan Frost gets a shot away. Its location offers context on chance quality, but does not predict a goal. Evidence: 1. Shot-quality proxy: 0.214 (heuristic, not calibrated xG).",
+      "lang": "en",
+      "mode": "analyst",
+      "source": "rules",
+      "evidence_ids": [
+        "s42-0010"
+      ]
+    },
+    {
+      "time": "09:19",
+      "title": "The moment that matters",
+      "text": "Samir West scores for Vale United. The finish changes the scoreline and the situation both teams must respond to. Evidence: 1. Shot-quality proxy: 0.205 (heuristic, not calibrated xG).",
+      "lang": "en",
+      "mode": "analyst",
+      "source": "rules",
+      "evidence_ids": [
+        "s42-0074"
+      ]
+    },
+    {
+      "time": "62:12",
+      "title": "The press is building",
+      "text": "Harbour FC records 3 pressure events in 30 seconds. This suggests a more intense press; it does not prove that pressure forced an error. Evidence: 3. ",
+      "lang": "en",
+      "mode": "analyst",
+      "source": "rules",
+      "evidence_ids": [
+        "s42-0500",
+        "s42-0501",
+        "s42-0502"
+      ]
+    },
+    {
+      "time": "62:28",
+      "title": "From turnover to opportunity",
+      "text": "Harbour FC shoots 10 seconds after an opposition turnover. The short transition suggests an opportunity before the defence could reset. Kai Santos scores. Evidence: 6. Shot-quality proxy: 0.238 (heuristic, not calibrated xG).",
+      "lang": "en",
+      "mode": "analyst",
+      "source": "rules",
+      "evidence_ids": [
+        "s42-0500",
+        "s42-0501",
+        "s42-0502",
+        "s42-0503",
+        "s42-0504",
+        "s42-0505"
+      ]
+    },
+    {
+      "time": "77:03",
+      "title": "The press is building",
+      "text": "Harbour FC records 3 pressure events in 30 seconds. This suggests a more intense press; it does not prove that pressure forced an error. Evidence: 3. ",
+      "lang": "en",
+      "mode": "analyst",
+      "source": "rules",
+      "evidence_ids": [
+        "s42-0615",
+        "s42-0616",
+        "s42-0619"
+      ]
+    }
+  ],
+  "stats": {
+    "harbour": {
+      "passes": 282,
+      "completed": 244,
+      "shots": 17,
+      "goals": 1,
+      "pressure": 40,
+      "quality": 2.223,
+      "events": 373
+    },
+    "vale": {
+      "passes": 272,
+      "completed": 232,
+      "shots": 23,
+      "goals": 1,
+      "pressure": 28,
+      "quality": 3.108,
+      "events": 349
+    }
+  }
+}

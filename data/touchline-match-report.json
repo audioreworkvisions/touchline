@@ -1,0 +1,801 @@
+{
+  "schema_version": "1.0",
+  "synthetic": true,
+  "seed": 42,
+  "as_of": "62:25",
+  "player_pulse": {
+    "version": "pulse-v1",
+    "synthetic": true,
+    "player_id": "p10",
+    "as_of_s": 3745,
+    "current": {
+      "supported": true,
+      "index": 59.9,
+      "raw_points": 9.948,
+      "rated_events": 23,
+      "provisional": false,
+      "contributions": [
+        {
+          "event_id": "s42-0001",
+          "time_s": 8.41,
+          "label": "Pass angekommen",
+          "points": 0.375,
+          "delta": 0.4,
+          "index": 50.4
+        },
+        {
+          "event_id": "s42-0043",
+          "time_s": 320.5,
+          "label": "Pass angekommen",
+          "points": 0.877,
+          "delta": 0.9,
+          "index": 51.3
+        },
+        {
+          "event_id": "s42-0079",
+          "time_s": 603.29,
+          "label": "Druckaktion",
+          "points": 0.4,
+          "delta": 0.4,
+          "index": 51.7
+        },
+        {
+          "event_id": "s42-0091",
+          "time_s": 699.22,
+          "label": "Pass angekommen",
+          "points": 0.75,
+          "delta": 0.7,
+          "index": 52.4
+        },
+        {
+          "event_id": "s42-0098",
+          "time_s": 759.18,
+          "label": "Pass angekommen",
+          "points": 0.43,
+          "delta": 0.4,
+          "index": 52.8
+        },
+        {
+          "event_id": "s42-0131",
+          "time_s": 1007.22,
+          "label": "Druckaktion",
+          "points": 0.4,
+          "delta": 0.4,
+          "index": 53.2
+        },
+        {
+          "event_id": "s42-0228",
+          "time_s": 1742.29,
+          "label": "Abschlussqualität",
+          "points": 0.278,
+          "delta": 0.3,
+          "index": 53.5
+        },
+        {
+          "event_id": "s42-0231",
+          "time_s": 1772.4,
+          "label": "Pass angekommen",
+          "points": 0.475,
+          "delta": 0.5,
+          "index": 54
+        },
+        {
+          "event_id": "s42-0275",
+          "time_s": 2087.07,
+          "label": "Pass fehlgeschlagen",
+          "points": -0.8,
+          "delta": -0.8,
+          "index": 53.2
+        },
+        {
+          "event_id": "s42-0284",
+          "time_s": 2137.26,
+          "label": "Pass angekommen",
+          "points": 0.478,
+          "delta": 0.5,
+          "index": 53.7
+        },
+        {
+          "event_id": "s42-0295",
+          "time_s": 2217.92,
+          "label": "Tackle gewonnen",
+          "points": 1,
+          "delta": 1,
+          "index": 54.7
+        },
+        {
+          "event_id": "s42-0307",
+          "time_s": 2310.68,
+          "label": "Pass angekommen",
+          "points": 0.508,
+          "delta": 0.5,
+          "index": 55.2
+        },
+        {
+          "event_id": "s42-0324",
+          "time_s": 2434.46,
+          "label": "Pass angekommen",
+          "points": 0.925,
+          "delta": 0.9,
+          "index": 56.1
+        },
+        {
+          "event_id": "s42-0331",
+          "time_s": 2490.14,
+          "label": "Pass fehlgeschlagen",
+          "points": -0.8,
+          "delta": -0.8,
+          "index": 55.3
+        },
+        {
+          "event_id": "s42-0353",
+          "time_s": 2657.5,
+          "label": "Pass angekommen",
+          "points": 0.305,
+          "delta": 0.3,
+          "index": 55.6
+        },
+        {
+          "event_id": "s42-0379",
+          "time_s": 2842.52,
+          "label": "Pass angekommen",
+          "points": 0.375,
+          "delta": 0.4,
+          "index": 56
+        },
+        {
+          "event_id": "s42-0382",
+          "time_s": 2861.84,
+          "label": "Pass angekommen",
+          "points": 0.517,
+          "delta": 0.5,
+          "index": 56.5
+        },
+        {
+          "event_id": "s42-0383",
+          "time_s": 2866.03,
+          "label": "Pass angekommen",
+          "points": 0.365,
+          "delta": 0.4,
+          "index": 56.9
+        },
+        {
+          "event_id": "s42-0385",
+          "time_s": 2879.19,
+          "label": "Pass angekommen",
+          "points": 0.897,
+          "delta": 0.9,
+          "index": 57.8
+        },
+        {
+          "event_id": "s42-0434",
+          "time_s": 3239.84,
+          "label": "Pass angekommen",
+          "points": 0.44,
+          "delta": 0.4,
+          "index": 58.2
+        },
+        {
+          "event_id": "s42-0447",
+          "time_s": 3328.4,
+          "label": "Druckaktion",
+          "points": 0.4,
+          "delta": 0.4,
+          "index": 58.6
+        },
+        {
+          "event_id": "s42-0489",
+          "time_s": 3645.02,
+          "label": "Pass angekommen",
+          "points": 0.493,
+          "delta": 0.5,
+          "index": 59.1
+        },
+        {
+          "event_id": "s42-0495",
+          "time_s": 3680.58,
+          "label": "Pass angekommen",
+          "points": 0.86,
+          "delta": 0.8,
+          "index": 59.9
+        }
+      ]
+    },
+    "season": {
+      "matches": 12,
+      "available": 12,
+      "median": 52.4,
+      "delta": 7.5,
+      "reference_scores": [
+        {
+          "match_id": "history-42-p10-S4-1",
+          "season": "S4",
+          "relative_fixture": -12,
+          "index": 53.4
+        },
+        {
+          "match_id": "history-42-p10-S4-2",
+          "season": "S4",
+          "relative_fixture": -11,
+          "index": 50
+        },
+        {
+          "match_id": "history-42-p10-S4-3",
+          "season": "S4",
+          "relative_fixture": -10,
+          "index": 62.6
+        },
+        {
+          "match_id": "history-42-p10-S4-4",
+          "season": "S4",
+          "relative_fixture": -9,
+          "index": 51.4
+        },
+        {
+          "match_id": "history-42-p10-S4-5",
+          "season": "S4",
+          "relative_fixture": -8,
+          "index": 49.4
+        },
+        {
+          "match_id": "history-42-p10-S4-6",
+          "season": "S4",
+          "relative_fixture": -7,
+          "index": 55.4
+        },
+        {
+          "match_id": "history-42-p10-S4-7",
+          "season": "S4",
+          "relative_fixture": -6,
+          "index": 47.7
+        },
+        {
+          "match_id": "history-42-p10-S4-8",
+          "season": "S4",
+          "relative_fixture": -5,
+          "index": 53.7
+        },
+        {
+          "match_id": "history-42-p10-S4-9",
+          "season": "S4",
+          "relative_fixture": -4,
+          "index": 49.3
+        },
+        {
+          "match_id": "history-42-p10-S4-10",
+          "season": "S4",
+          "relative_fixture": -3,
+          "index": 49.7
+        },
+        {
+          "match_id": "history-42-p10-S4-11",
+          "season": "S4",
+          "relative_fixture": -2,
+          "index": 53.7
+        },
+        {
+          "match_id": "history-42-p10-S4-12",
+          "season": "S4",
+          "relative_fixture": -1,
+          "index": 54.8
+        }
+      ]
+    },
+    "career": {
+      "matches": 48,
+      "available": 48,
+      "median": 54.1,
+      "delta": 5.8,
+      "reference_scores": [
+        {
+          "match_id": "history-42-p10-S1-1",
+          "season": "S1",
+          "relative_fixture": -48,
+          "index": 57.6
+        },
+        {
+          "match_id": "history-42-p10-S1-2",
+          "season": "S1",
+          "relative_fixture": -47,
+          "index": 55.7
+        },
+        {
+          "match_id": "history-42-p10-S1-3",
+          "season": "S1",
+          "relative_fixture": -46,
+          "index": 46.2
+        },
+        {
+          "match_id": "history-42-p10-S1-4",
+          "season": "S1",
+          "relative_fixture": -45,
+          "index": 57.2
+        },
+        {
+          "match_id": "history-42-p10-S1-5",
+          "season": "S1",
+          "relative_fixture": -44,
+          "index": 50.8
+        },
+        {
+          "match_id": "history-42-p10-S1-6",
+          "season": "S1",
+          "relative_fixture": -43,
+          "index": 56.5
+        },
+        {
+          "match_id": "history-42-p10-S1-7",
+          "season": "S1",
+          "relative_fixture": -42,
+          "index": 54.8
+        },
+        {
+          "match_id": "history-42-p10-S1-8",
+          "season": "S1",
+          "relative_fixture": -41,
+          "index": 54
+        },
+        {
+          "match_id": "history-42-p10-S1-9",
+          "season": "S1",
+          "relative_fixture": -40,
+          "index": 57.5
+        },
+        {
+          "match_id": "history-42-p10-S1-10",
+          "season": "S1",
+          "relative_fixture": -39,
+          "index": 53.7
+        },
+        {
+          "match_id": "history-42-p10-S1-11",
+          "season": "S1",
+          "relative_fixture": -38,
+          "index": 52.7
+        },
+        {
+          "match_id": "history-42-p10-S1-12",
+          "season": "S1",
+          "relative_fixture": -37,
+          "index": 51.6
+        },
+        {
+          "match_id": "history-42-p10-S2-1",
+          "season": "S2",
+          "relative_fixture": -36,
+          "index": 62
+        },
+        {
+          "match_id": "history-42-p10-S2-2",
+          "season": "S2",
+          "relative_fixture": -35,
+          "index": 55.6
+        },
+        {
+          "match_id": "history-42-p10-S2-3",
+          "season": "S2",
+          "relative_fixture": -34,
+          "index": 58.5
+        },
+        {
+          "match_id": "history-42-p10-S2-4",
+          "season": "S2",
+          "relative_fixture": -33,
+          "index": 50.2
+        },
+        {
+          "match_id": "history-42-p10-S2-5",
+          "season": "S2",
+          "relative_fixture": -32,
+          "index": 52.7
+        },
+        {
+          "match_id": "history-42-p10-S2-6",
+          "season": "S2",
+          "relative_fixture": -31,
+          "index": 57.2
+        },
+        {
+          "match_id": "history-42-p10-S2-7",
+          "season": "S2",
+          "relative_fixture": -30,
+          "index": 58.5
+        },
+        {
+          "match_id": "history-42-p10-S2-8",
+          "season": "S2",
+          "relative_fixture": -29,
+          "index": 59.9
+        },
+        {
+          "match_id": "history-42-p10-S2-9",
+          "season": "S2",
+          "relative_fixture": -28,
+          "index": 52.6
+        },
+        {
+          "match_id": "history-42-p10-S2-10",
+          "season": "S2",
+          "relative_fixture": -27,
+          "index": 58.8
+        },
+        {
+          "match_id": "history-42-p10-S2-11",
+          "season": "S2",
+          "relative_fixture": -26,
+          "index": 58.2
+        },
+        {
+          "match_id": "history-42-p10-S2-12",
+          "season": "S2",
+          "relative_fixture": -25,
+          "index": 54.4
+        },
+        {
+          "match_id": "history-42-p10-S3-1",
+          "season": "S3",
+          "relative_fixture": -24,
+          "index": 56.7
+        },
+        {
+          "match_id": "history-42-p10-S3-2",
+          "season": "S3",
+          "relative_fixture": -23,
+          "index": 60.2
+        },
+        {
+          "match_id": "history-42-p10-S3-3",
+          "season": "S3",
+          "relative_fixture": -22,
+          "index": 57.3
+        },
+        {
+          "match_id": "history-42-p10-S3-4",
+          "season": "S3",
+          "relative_fixture": -21,
+          "index": 49.3
+        },
+        {
+          "match_id": "history-42-p10-S3-5",
+          "season": "S3",
+          "relative_fixture": -20,
+          "index": 52.7
+        },
+        {
+          "match_id": "history-42-p10-S3-6",
+          "season": "S3",
+          "relative_fixture": -19,
+          "index": 52.4
+        },
+        {
+          "match_id": "history-42-p10-S3-7",
+          "season": "S3",
+          "relative_fixture": -18,
+          "index": 61.7
+        },
+        {
+          "match_id": "history-42-p10-S3-8",
+          "season": "S3",
+          "relative_fixture": -17,
+          "index": 54.2
+        },
+        {
+          "match_id": "history-42-p10-S3-9",
+          "season": "S3",
+          "relative_fixture": -16,
+          "index": 49.7
+        },
+        {
+          "match_id": "history-42-p10-S3-10",
+          "season": "S3",
+          "relative_fixture": -15,
+          "index": 51.9
+        },
+        {
+          "match_id": "history-42-p10-S3-11",
+          "season": "S3",
+          "relative_fixture": -14,
+          "index": 52.9
+        },
+        {
+          "match_id": "history-42-p10-S3-12",
+          "season": "S3",
+          "relative_fixture": -13,
+          "index": 58.8
+        },
+        {
+          "match_id": "history-42-p10-S4-1",
+          "season": "S4",
+          "relative_fixture": -12,
+          "index": 53.4
+        },
+        {
+          "match_id": "history-42-p10-S4-2",
+          "season": "S4",
+          "relative_fixture": -11,
+          "index": 50
+        },
+        {
+          "match_id": "history-42-p10-S4-3",
+          "season": "S4",
+          "relative_fixture": -10,
+          "index": 62.6
+        },
+        {
+          "match_id": "history-42-p10-S4-4",
+          "season": "S4",
+          "relative_fixture": -9,
+          "index": 51.4
+        },
+        {
+          "match_id": "history-42-p10-S4-5",
+          "season": "S4",
+          "relative_fixture": -8,
+          "index": 49.4
+        },
+        {
+          "match_id": "history-42-p10-S4-6",
+          "season": "S4",
+          "relative_fixture": -7,
+          "index": 55.4
+        },
+        {
+          "match_id": "history-42-p10-S4-7",
+          "season": "S4",
+          "relative_fixture": -6,
+          "index": 47.7
+        },
+        {
+          "match_id": "history-42-p10-S4-8",
+          "season": "S4",
+          "relative_fixture": -5,
+          "index": 53.7
+        },
+        {
+          "match_id": "history-42-p10-S4-9",
+          "season": "S4",
+          "relative_fixture": -4,
+          "index": 49.3
+        },
+        {
+          "match_id": "history-42-p10-S4-10",
+          "season": "S4",
+          "relative_fixture": -3,
+          "index": 49.7
+        },
+        {
+          "match_id": "history-42-p10-S4-11",
+          "season": "S4",
+          "relative_fixture": -2,
+          "index": 53.7
+        },
+        {
+          "match_id": "history-42-p10-S4-12",
+          "season": "S4",
+          "relative_fixture": -1,
+          "index": 54.8
+        }
+      ]
+    },
+    "tracking": [
+      {
+        "time_s": 3689.36,
+        "player_id": "p10",
+        "x": 29.15,
+        "y": 1.91,
+        "speed_kmh": 13.6
+      },
+      {
+        "time_s": 3700.66,
+        "player_id": "p10",
+        "x": 37.24,
+        "y": 1,
+        "speed_kmh": 2.6
+      },
+      {
+        "time_s": 3709.53,
+        "player_id": "p10",
+        "x": 27.52,
+        "y": 1,
+        "speed_kmh": 3.9
+      },
+      {
+        "time_s": 3719.63,
+        "player_id": "p10",
+        "x": 13.64,
+        "y": 1,
+        "speed_kmh": 4.9
+      },
+      {
+        "time_s": 3720,
+        "player_id": "p10",
+        "x": 13.86,
+        "y": 1,
+        "speed_kmh": 2.2
+      },
+      {
+        "time_s": 3726,
+        "player_id": "p10",
+        "x": 14.04,
+        "y": 14.97,
+        "speed_kmh": 8.4
+      },
+      {
+        "time_s": 3732,
+        "player_id": "p10",
+        "x": 36.08,
+        "y": 25.22,
+        "speed_kmh": 14.6
+      },
+      {
+        "time_s": 3738,
+        "player_id": "p10",
+        "x": 20.85,
+        "y": 12.71,
+        "speed_kmh": 11.8
+      },
+      {
+        "time_s": 3743,
+        "player_id": "p10",
+        "x": 40.3,
+        "y": 18.48,
+        "speed_kmh": 14.6
+      }
+    ],
+    "history_definition": "48 previous full matches: 12 in S4; 36 in S1–S3. Same clock cutoff. No current match in baseline."
+  },
+  "state": {
+    "time": 3743,
+    "stats": {
+      "harbour": {
+        "passes": 194,
+        "completed": 167,
+        "shots": 12,
+        "goals": 0,
+        "pressure": 28,
+        "quality": 1.3790000000000002,
+        "events": 251
+      },
+      "vale": {
+        "passes": 202,
+        "completed": 178,
+        "shots": 17,
+        "goals": 1,
+        "pressure": 19,
+        "quality": 2.614,
+        "events": 253
+      }
+    },
+    "control": 65,
+    "chaos": 35,
+    "window_s": 120,
+    "events": 504
+  },
+  "preferences": {
+    "mode": "player",
+    "club": "all",
+    "playerId": "p10",
+    "lang": "de",
+    "metric": "all"
+  },
+  "insights": [
+    {
+      "id": "ins-s42-0385",
+      "kind": "progression",
+      "rank": 45,
+      "team_id": "harbour",
+      "player_id": "p10",
+      "match_time_s": 2879.19,
+      "evidence_ids": [
+        "s42-0385"
+      ],
+      "facts": {
+        "distance_m": 20.5,
+        "speed_kmh": 47.6,
+        "difficulty": 37,
+        "progression_m": 20.5
+      },
+      "method": "deterministic-v1",
+      "uncertainty": "observed-synthetic"
+    },
+    {
+      "id": "ins-s42-0324",
+      "kind": "progression",
+      "rank": 45,
+      "team_id": "harbour",
+      "player_id": "p10",
+      "match_time_s": 2434.46,
+      "evidence_ids": [
+        "s42-0324"
+      ],
+      "facts": {
+        "distance_m": 20.8,
+        "speed_kmh": 30.7,
+        "difficulty": 42,
+        "progression_m": 20.6
+      },
+      "method": "deterministic-v1",
+      "uncertainty": "observed-synthetic"
+    },
+    {
+      "id": "ins-s42-0228",
+      "kind": "chance",
+      "rank": 65,
+      "team_id": "harbour",
+      "player_id": "p10",
+      "match_time_s": 1742.29,
+      "evidence_ids": [
+        "s42-0228"
+      ],
+      "facts": {
+        "quality": 0.139,
+        "goal": false,
+        "seconds_since_turnover": null
+      },
+      "method": "deterministic-v1",
+      "uncertainty": "observed-synthetic"
+    }
+  ],
+  "recap": {
+    "synthetic": true,
+    "as_of": "62:23",
+    "complete": false,
+    "score": "0 : 1",
+    "title": "Die Geschichte bisher",
+    "moments": [
+      {
+        "time": "29:02",
+        "title": "Eine Chance entsteht",
+        "text": "Kai Santos · Kai Santos kommt zum Abschluss. Die Position liefert einen Hinweis auf die Qualität dieser Chance, sagt aber keinen Treffer voraus.",
+        "lang": "de",
+        "mode": "player",
+        "source": "rules",
+        "evidence_ids": [
+          "s42-0228"
+        ]
+      },
+      {
+        "time": "40:34",
+        "title": "Ein Pass öffnet Raum",
+        "text": "Kai Santos · Kai Santos bringt den Ball mit einem erfolgreichen Pass 20.6 Meter näher ans gegnerische Tor. So wird Raum für den nächsten Angriff gewonnen.",
+        "lang": "de",
+        "mode": "player",
+        "source": "rules",
+        "evidence_ids": [
+          "s42-0324"
+        ]
+      },
+      {
+        "time": "47:59",
+        "title": "Ein Pass öffnet Raum",
+        "text": "Kai Santos · Kai Santos bringt den Ball mit einem erfolgreichen Pass 20.5 Meter näher ans gegnerische Tor. So wird Raum für den nächsten Angriff gewonnen.",
+        "lang": "de",
+        "mode": "player",
+        "source": "rules",
+        "evidence_ids": [
+          "s42-0385"
+        ]
+      }
+    ],
+    "stats": {
+      "harbour": {
+        "passes": 194,
+        "completed": 167,
+        "shots": 12,
+        "goals": 0,
+        "pressure": 28,
+        "quality": 1.3790000000000002,
+        "events": 251
+      },
+      "vale": {
+        "passes": 202,
+        "completed": 178,
+        "shots": 17,
+        "goals": 1,
+        "pressure": 19,
+        "quality": 2.614,
+        "events": 253
+      }
+    }
+  }
+}
