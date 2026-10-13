@@ -23,3 +23,13 @@ test('podcast event budget is bounded and controls content volume', () => {
  const words = budget => createPodcast(match, {eventsPerChapter: budget}).chapters.map(c => c.text).join(' ').split(/\s+/).length;
  assert.ok(words(10) > words(6));
 });
+test('match drama opens energetically without per-action clock announcements', () => {
+ const episode = createPodcast(generateMatch(42));
+ const spoken = episode.chapters.map(c => c.text).join('\n');
+ assert.match(episode.chapters[0].text, /Jetzt zählt jeder Ball!/);
+ assert.doesNotMatch(spoken, /Willkommen|Sekunde|Minute \d|Spielabschnitt von|aufgezeichneten Aktionen|synthetischen Partie/);
+ assert.match(spoken, /keine echte Liveübertragung/i);
+ assert.match(spoken, /gegnerischen Torlinie/);
+ assert.match(spoken, /später|späteren|Sprung/);
+ assert.ok(episode.chapters.some(c => c.title === '00:00 bis 05:00'));
+});

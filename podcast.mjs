@@ -1,7 +1,6 @@
 import {player, team, clock} from './dist/engine.mjs';
 
 const number = value => new Intl.NumberFormat('de-DE', {maximumFractionDigits: 0}).format(value);
-const time = seconds => `Minute ${Math.floor(seconds / 60)}, Sekunde ${Math.floor(seconds % 60)}`;
 const scoreText = score => `Harbour FC ${score.harbour}, Vale United ${score.vale}`;
 
 function position(point) {
@@ -17,18 +16,18 @@ function action(event) {
   case 'pass': {
    const receiver = player(event.receiver_id).name;
    const direction = event.end.x - event.start.x > 5 ? 'nach vorn' : event.end.x - event.start.x < -5 ? 'zurück' : 'quer';
-   return `${who}, ${club}, ${location}. Ein Pass ${direction} zu ${receiver}. ${event.success ? 'Der Ball kommt an.' : 'Der Ball kommt nicht an.'}`;
+   return `${who} für ${club}, ${location}. Er spielt ${direction}, sucht ${receiver}. ${event.success ? `${receiver} erreicht der Ball. Der Pass sitzt!` : 'Doch der Pass kommt nicht an!'}`;
   }
   case 'shot':
-   return `${who} für ${club}, ${location}. Der Abschluss! ${event.goal ? `Tor für ${club}! ${who} trifft.` : 'Kein Tor. Die genaue Art des Fehlschlags ist nicht erfasst.'}`;
+   return `${who} für ${club}, ${location}. Er schließt ab! ${event.goal ? `Tor! Tor für ${club}! ${who} trifft!` : 'Kein Tor! Es bleibt beim bisherigen Spielstand.'}`;
   case 'turnover':
-   return `${club}, ${who}, ${location}. Ballverlust! Die Kontrolle über die weitere Aktion ist damit zunächst offen.`;
+   return `${who} von ${club}, ${location}. Und da geht der Ball verloren!`;
   case 'tackle':
-   return `${who} von ${club}, ${location}, geht in einen Zweikampf. ${event.success ? 'Eine erfolgreiche Aktion.' : 'Diese Aktion gelingt nicht.'}`;
+   return `${who} von ${club}, ${location}. Er geht in den Zweikampf! ${event.success ? `${who} setzt sich in dieser Aktion durch.` : 'Doch in diesem Duell gelingt ihm die Aktion nicht.'}`;
   case 'pressure':
-   return `${who} von ${club} setzt den Gegner unter Druck. Der Ort dieser Pressingaktion: ${location}.`;
+   return `${who} von ${club}, ${location}. Er macht Druck auf den Gegner!`;
   case 'throw':
-   return `${club}: Einwurf von ${who}, ${location}. ${event.success ? 'Erfolgreich ausgeführt.' : 'Die Aktion bleibt ohne Erfolg.'}`;
+   return `Einwurf für ${club}. ${who}, ${location}, bringt den Ball ins Spiel. ${event.success ? 'Der Einwurf gelingt.' : 'Dieser Einwurf bleibt ohne Erfolg.'}`;
   default: throw Error(`Unsupported podcast event: ${event.type}`);
  }
 }
@@ -38,12 +37,13 @@ export function createPodcast(match, {eventsPerChapter = 6} = {}) {
  if (!match.synthetic || match.duration_s !== 5400 || !match.events.length) throw Error('Podcast requires a complete synthetic 90-minute match');
  const chapters = [];
  const add = (title, text, events = []) => chapters.push({id: `chapter-${chapters.length + 1}`, title, text, evidence_ids: events.map(e => e.id)});
- add('Willkommen und Orientierung', `Willkommen zu Touchline Hörfußball. Harbour FC gegen Vale United. Eine fiktive Begegnung, erzählt aus synthetisch erzeugten Spieldaten. Du hörst eine zeitlich verdichtete Reportage, keine reale Übertragung und keine lückenlose Live-Audiodeskription.
- Wir begleiten beide Halbzeiten in chronologischer Reihenfolge. Zeitsprünge werden angesagt. Die Spielzeit ist nicht die Laufzeit dieser Audiodatei. Jeder ausgewählte Moment nennt Mannschaft, Spieler und Ort der Aktion. Zur Orientierung verwenden wir das eigene Drittel, das mittlere Drittel und das Angriffsdrittel, jeweils aus Sicht der handelnden Mannschaft. Die Entfernung zur gegnerischen Torlinie hilft, die Situation einzuordnen. Links und rechts lassen wir weg, weil die Daten dafür keine verlässliche Hörperspektive festlegen.
- Nicht erfasst sind unter anderem Zuschauerreaktionen, Schiedsrichterpfiffe, Verletzungen und Auswechslungen. Wir erfinden diese Geräusche oder Ereignisse nicht dazu. Auch taktische Absichten sind keine beobachteten Fakten. Den Spielstand nennen wir nach jedem Tor und an den Abschnittsgrenzen. Noch steht es null zu null. Beginnen wir mit den ersten aufgezeichneten Aktionen.`);
+ add('Vor dem Spiel: Jetzt zählt jeder Ball!', `Harbour FC gegen Vale United! Zwei Mannschaften, ein Ball, und die große Frage: Wer macht heute den entscheidenden Unterschied? Mach dich bereit für Pässe, Zweikämpfe und die Momente vor dem Tor. Jetzt zählt jeder Ball!
+ Das ist Touchline Hörfußball: eine fiktive Partie als verdichtetes Match-Hörspiel mit künstlicher Stimme, keine echte Liveübertragung. Wir nehmen dich mit ins Spiel. Du brauchst kein Bild: Wir nennen dir Spieler, Mannschaft und den Raum, in dem die Aktion stattfindet.
+ Denk das Spielfeld immer aus Sicht der Mannschaft am Ball: hinten das eigene Drittel, dazwischen das Mittelfeld, vorn das Angriffsdrittel. Dazu hörst du die Entfernung zur gegnerischen Torlinie. So kannst du den Weg zum Tor verfolgen. Bei längeren Sprüngen wechseln wir ausdrücklich die Szene; nicht jeder Pass des Spiels ist zu hören.
+ Noch steht es null zu null. Wer findet den freien Mitspieler? Wer kommt zum Abschluss? Die Antworten liefert das Spiel. Harbour FC. Vale United. Jetzt geht es los!`);
  const score = {harbour: 0, vale: 0};
  for (let start = 0; start < 5400; start += 300) {
-  if (start === 2700) add('Halbzeit', `45 Minuten liegen hinter uns. Halbzeitstand: ${scoreText(score)}. Wir machen einen kurzen gedanklichen Halt. Die erste Hälfte ist abgeschlossen. Gleich geht es mit den aufgezeichneten Aktionen der zweiten Hälfte weiter. Die Raumangaben bleiben auf die jeweils handelnde Mannschaft bezogen. Es gibt keine verlässlichen Angaben zu einer Kabinenansprache oder zu Wechseln; darüber spekulieren wir nicht.`, match.events.filter(e => e.match_time_s < start && e.goal));
+  if (start === 2700) add('Halbzeit', `Halbzeit! ${scoreText(score)}. Eine Hälfte liegt hinter uns, eine liegt noch vor uns. Nimm diesen Spielstand mit in die Pause. Was bringt die zweite Hälfte? Kann sich das Kräfteverhältnis auf der Anzeigetafel noch verschieben? Wir verraten nichts vorweg. Gleich sind wir wieder bei den Spielern und beim Ball.`, match.events.filter(e => e.match_time_s < start && e.goal));
   const end = start + 300;
   const events = match.events.filter(e => e.match_time_s >= start && e.match_time_s < end);
   const selected = new Set(events.filter(e => e.goal));
@@ -55,17 +55,21 @@ export function createPodcast(match, {eventsPerChapter = 6} = {}) {
   if (shot && selected.size < eventsPerChapter) selected.add(shot);
   for (let i = 0; i < eventsPerChapter && events.length && selected.size < eventsPerChapter; i++) selected.add(events[Math.floor(i * events.length / eventsPerChapter)]);
   const ordered = [...selected].sort((a, b) => a.match_time_s - b.match_time_s);
-  const lines = [`Spielabschnitt von Minute ${start / 60} bis Minute ${end / 60}. Aktueller Stand zu Beginn: ${scoreText(score)}.`];
+  const lines = [start === 0 ? 'Hinein in die Anfangsphase!' : start === 2700 ? 'Weiter geht es mit der zweiten Halbzeit!' : `Wir gehen weiter in die nächste Spielphase, nach ${start / 60} Minuten. ${scoreText(score)}.`];
+  let previous;
   for (const event of ordered) {
-   lines.push(`${time(event.match_time_s)}. ${action(event)}`);
+   const transition = previous && event.match_time_s - previous.match_time_s > 20
+    ? ['Etwas später, in einer neuen Szene.', 'Wir wechseln zu einer späteren Aktion.', 'Ein Sprung zur nächsten Szene.'][ordered.indexOf(event) % 3]
+    : '';
+   lines.push(`${transition ? `${transition} ` : ''}${action(event)}`);
    if (event.goal) { score[event.team_id]++; lines.push(`Der neue Spielstand: ${scoreText(score)}.`); }
+   previous = event;
   }
-  lines.push(`Stand nach ${end / 60} Minuten: ${scoreText(score)}. Wir springen zum nächsten Abschnitt.`);
   add(`${clock(start)} bis ${clock(end)}`, lines.join('\n\n'), ordered);
  }
- add('Schlussbericht', `Das Ende unserer synthetischen Partie ist erreicht. Nach 90 Spielminuten lautet der Endstand: ${scoreText(score)}.
- ${score.harbour === score.vale ? 'Damit endet diese Begegnung unentschieden.' : `${team(score.harbour > score.vale ? 'harbour' : 'vale').name} hat diese fiktive Begegnung gewonnen.`}
- Wir haben ausgewählte Aktionen beider Mannschaften verfolgt, die Toraktionen eingeordnet und den Spielstand laufend aktualisiert. Der Podcast ist eine verdichtete Darstellung, kein Ersatz für eine vollständige Analyse. Im beiliegenden Transkript findest du die Kapitel; die Produktionsdaten enthalten die Ereignisbelege.
- Danke fürs Zuhören bei Touchline Hörfußball. Diese Folge wurde mit einer künstlichen Stimme produziert. Die Mannschaften, Spieler und Spieldaten sind fiktiv.`, match.events.filter(e => e.goal));
- return {version: 1, seed: match.seed, synthetic: true, language: 'de', title: 'Touchline Hörfußball: Harbour FC gegen Vale United', score, chapters};
+ add('Schlussbericht', `Das war dieses Spiel! Nach zwei Halbzeiten steht fest: ${scoreText(score)}.
+ ${score.harbour === score.vale ? 'Kein Sieger heute. Die beiden Mannschaften trennen sich unentschieden.' : `${team(score.harbour > score.vale ? 'harbour' : 'vale').name} entscheidet diese Partie für sich!`}
+ Vom ersten ausgewählten Pass bis zum letzten Abschluss: Du warst dabei, mit Spielernamen, Spielstand und dem Weg zum Tor im Ohr.
+ Das war Touchline Hörfußball. Ein fiktives Match-Hörspiel mit künstlicher Stimme auf Basis synthetischer Spieldaten. Keine echte Liveübertragung. Kapitel und Ereignisbelege findest du im begleitenden Transkript und in den Produktionsdaten. Bis zum nächsten Spiel!`, match.events.filter(e => e.goal));
+ return {version: 2, seed: match.seed, synthetic: true, language: 'de', title: 'Touchline Hörfußball: Harbour FC gegen Vale United', score, chapters};
 }

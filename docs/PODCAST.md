@@ -6,11 +6,19 @@ configuration in `.env`. This performs billable speech synthesis.
 
 The German episode is a chronological, condensed report from the existing
 synthetic match, not a real match or a continuous 90-minute audio description.
-The script includes an introduction, eighteen five-minute match windows,
+The script opens with an energetic pre-match announcement, eighteen five-minute match windows,
 half-time and a final report. All goals and their available preceding actions
 are preserved. Unrecorded outcomes, crowd sounds and causal tactical claims are
 not invented. The current source simulator remains a simplified demo, not a
 validated realistic football simulation.
+
+The spoken version uses present-tense match commentary without minute/second
+prefixes before individual actions. Match time remains in chapter titles and
+occasional phase orientation. Longer gaps between selected actions are explicitly
+signalled as scene changes rather than presented as continuous possession.
+Player, team, field zone, distance to goal and score retain the audio orientation.
+The opening and ending disclose the fictional, condensed nature of the drama.
+Regenerate with the command above to update both the MP3 and its transcript.
 
 Outputs are ignored by Git under `outputs/podcasts/match-SEED/`:
 
